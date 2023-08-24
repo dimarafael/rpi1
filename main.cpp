@@ -40,8 +40,9 @@ int main(){
 	gpio = (volatile unsigned*)gpioMap;
 //-------------
 
-	*gpio = (unsigned)0; // clear GPIO 0-9 funclion register (to input mode)
-	*gpio |= 1<<3|1; // Set GPIO Pin 0 and 1 to output mode
+	*gpio &= ~(7<<15|7<<18); // Clear settings for pin 5 and 6
+
+	*gpio |= 1<<15|1<<18; // Set GPIO Pin 5 and 6 to output mode
 
 
 	// main loop
