@@ -49,13 +49,13 @@ int main(){
 	while(true){
 
 		if(!st){ // switch On LED
-			*(gpio+7) = 1; // switc ON Pin 0
+			*(gpio+7) = 1<<5; // switc ON Pin 5
 			sleep(1);
-			*(gpio+7) = 2; // switc ON Pin 1
+			*(gpio+7) = 1<<6; // switc ON Pin 6
 		} else { // switch OFF LED
-			*(gpio+10) = 1; // switc OFF Pin 0
+			*(gpio+10) = 1<<5; // switc OFF Pin 5
 			sleep(1);
-			*(gpio+10) = 2; // switc ON Pin 1
+			*(gpio+10) = 1<<6; // switc ON Pin 6
 		}
 	}
 
